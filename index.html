@@ -1,112 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Nicolas Bruno - Senior Backend Engineer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicolás Bruno - Senior Backend Engineer</title>
+    <style>
+        /* =========================================
+           TEMA MODERNO (DEFAULT)
+           ========================================= */
+        :root {
+            --bg-color: #0f172a; /* Dark slate */
+            --text-color: #cbd5e1; /* Light slate */
+            --heading-color: #e2e8f0;
+            --accent-color: #38bdf8; /* Bright blue */
+            --card-bg: #1e293b;
+            --border-color: #334155;
+            --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            --font-mono: 'Consolas', monospace;
+            --transition: all 0.3s ease;
+        }
 
-<style>
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            transition: var(--transition);
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
-    background: #111;
-    color: #eee;
-}
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
 
-h1 {
-    color: #4da3ff;
-}
+        h1, h2, h3 { color: var(--heading-color); }
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--accent-color); }
+        h2 { font-size: 1.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-top: 40px; }
+        h3 { font-size: 1.2rem; margin-bottom: 5px; }
+        
+        a { color: var(--accent-color); text-decoration: none; transition: var(--transition); }
+        a:hover { text-decoration: underline; }
 
-h2 {
-    color: #4da3ff;
-    margin-top: 30px;
-}
+        .header-info { margin-bottom: 30px; font-size: 1.1rem; }
+        .header-info span { margin-right: 15px; display: inline-block; }
 
-a {
-    color: #6cb6ff;
-}
+        /* Skills Badges */
+        .skills-container { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skill-tag {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--accent-color);
+        }
 
-.section {
-    margin-bottom: 20px;
-}
+        /* Experience Timeline */
+        .timeline { border-left: 2px solid var(--border-color); padding-left: 20px; margin-top: 20px; }
+        .job { position: relative; margin-bottom: 40px; }
+        .job::before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            border: 2px solid var(--bg-color);
+        }
+        .job-title { font-weight: bold; color: var(--heading-color); }
+        .job-date { font-family: var(--font-mono); font-size: 0.9rem; color: #94a3b8; margin-bottom: 10px; }
+        .job-details ul { padding-left: 20px; margin-top: 10px; }
+        .job-details li { margin-bottom: 8px; }
 
-</style>
+        /* =========================================
+           TEMA LEGACY (TERMINAL MODE)
+           ========================================= */
+        body.legacy-mode {
+            --bg-color: #000000;
+            --text-color: #33ff00;
+            --heading-color: #33ff00;
+            --accent-color: #33ff00;
+            --card-bg: #000000;
+            --border-color: #33ff00;
+            --font-main: 'Courier New', Courier, monospace;
+            --font-mono: 'Courier New', Courier, monospace;
+        }
 
+        body.legacy-mode * {
+            text-shadow: 0 0 4px rgba(51, 255, 0, 0.4);
+        }
+
+        body.legacy-mode .skill-tag {
+            background-color: transparent;
+            border: 1px dashed var(--accent-color);
+            border-radius: 0;
+        }
+
+        body.legacy-mode .job::before {
+            border-radius: 0;
+            background-color: #000;
+            border: 2px solid var(--accent-color);
+        }
+
+        body.legacy-mode h2 { border-bottom: 1px dashed var(--accent-color); }
+
+        /* Toggle Button */
+        .theme-switch-wrapper {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: var(--card-bg);
+            padding: 10px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        
+        body.legacy-mode .theme-switch-wrapper { border-radius: 0; border: 1px dashed var(--accent-color); }
+
+        .switch { position: relative; display: inline-block; width: 40px; height: 20px; }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider {
+            position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #334155; transition: .4s; border-radius: 20px;
+        }
+        .slider:before {
+            position: absolute; content: ""; height: 16px; width: 16px;
+            left: 2px; bottom: 2px; background-color: white; transition: .4s; border-radius: 50%;
+        }
+        input:checked + .slider { background-color: var(--accent-color); }
+        input:checked + .slider:before { transform: translateX(20px); background-color: #000; }
+        body.legacy-mode .slider { border-radius: 0; border: 1px solid var(--accent-color); background: #000; }
+        body.legacy-mode .slider:before { border-radius: 0; background-color: var(--accent-color); }
+
+    </style>
 </head>
-
 <body>
 
-<h1>Nicolás Bruno</h1>
+    <div class="theme-switch-wrapper">
+        <span>MODERN</span>
+        <label class="switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider"></span>
+        </label>
+        <span>LEGACY</span>
+    </div>
 
-<p>
-Senior Backend Engineer | Java | Python | SQL Server | Financial Systems
-</p>
+    <div class="container">
+        <header>
+            <h1>Nicolás Bruno</h1>
+            <div class="header-info">
+                <span>📍 Buenos Aires, Argentina</span>
+                <span>📧 <a href="mailto:nicolas.bruno.86@gmail.com">nicolas.bruno.86@gmail.com</a></span>
+                <span>📞 +54 11 5455-4563</span>
+                <span>🔗 <a href="https://www.linkedin.com/in/nicolas-bruno-nh" target="_blank">linkedin.com/in/nicolas-bruno-nh</a></span>
+            </div>
+            <p><strong>Senior Java Backend Engineer | Financial Systems | SQL Server | API & Integration Specialist</strong></p>
+        </header>
 
-<p>
-Buenos Aires, Argentina<br>
-Email: nico.nh@gmail.com<br>
-LinkedIn:
-<a href="https://www.linkedin.com/in/nicolas-bruno-nh">
-linkedin.com/in/nicolas-bruno-nh
-</a>
-</p>
+        <section id="about">
+            <h2>>_ About</h2>
+            <p>Senior Software Engineer with 18+ years of experience in enterprise systems, banking platforms and high-volume backend applications. Strong experience in Java, SQL Server, system integration, REST/SOAP services, and modernization of legacy platforms. Currently working on financial and trade systems, API development and performance optimization. Open to remote contract opportunities.</p>
+        </section>
 
-<h2>About</h2>
+        <section id="skills">
+            <h2>>_ Technical Skills</h2>
+            <div class="skills-container">
+                <span class="skill-tag">Java / Spring</span>
+                <span class="skill-tag">REST / SOAP / XML</span>
+                <span class="skill-tag">SQL Server / Query Tuning</span>
+                <span class="skill-tag">API Integration</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">JSP / JSF / React</span>
+                <span class="skill-tag">WebSphere / JBoss / WildFly</span>
+                <span class="skill-tag">Docker / Kubernetes / AWS</span>
+                <span class="skill-tag">Linux / Windows Server</span>
+                <span class="skill-tag">Git / CI/CD</span>
+                <span class="skill-tag">Financial / Banking Systems</span>
+                <span class="skill-tag">High-volume Batch Processing</span>
+            </div>
+        </section>
 
-<p>
-Senior Software Engineer with 18+ years of experience in enterprise systems,
-banking platforms and high-volume backend applications.
-Experience in Java, Python, SQL Server, REST/SOAP, microservices and legacy system modernization.
-Open to remote contract opportunities.
-</p>
+        <section id="experience">
+            <h2>>_ Professional Experience</h2>
+            <div class="timeline">
+                
+                <div class="job">
+                    <div class="job-title">Senior Software Engineer / System Analyst @ Structured Intelligence Argentina SA</div>
+                    <div class="job-date">May 2006 – Present</div>
+                    <div class="job-details">
+                        <p>Development, maintenance and modernization of enterprise banking and trade systems.</p>
+                        <ul>
+                            <li><strong>eComex (Foreign Trade System):</strong> Backend development in Java for high-volume financial operations. Built SOAP/XML integrations with banking platforms and optimized SQL Server for large datasets. Implemented web modules using JSP, React, and Bootstrap.</li>
+                            <li><strong>MCI2000 (Communications Module):</strong> Development of REST services and workers. Handled message processing and integration with external systems, focusing on performance improvements in backend processes.</li>
+                            <li><strong>TERMAP (Vessel Nomination System):</strong> Fullstack development (Java + HTML5 + Bootstrap + jQuery) including REST API creation and database design/optimization.</li>
+                            <li><strong>Infrastructure:</strong> SQL Server, Windows/Linux Server, Cisco networks, and administration of WebSphere, JBoss, WildFly, and Tomcat application servers.</li>
+                        </ul>
+                    </div>
+                </div>
 
-<h2>Skills</h2>
+                <div class="job">
+                    <div class="job-title">Backend Developer / DevOps / Web Tools @ Crehana</div>
+                    <div class="job-date">Feb 2024 – Apr 2025</div>
+                    <div class="job-details">
+                        <ul>
+                            <li>Developed a Python web tool for SEO management (automated sitemap.xml and robots.txt).</li>
+                            <li>Set up local development environments for a blog microservices architecture and conducted functional analysis for a WordPress migration.</li>
+                            <li>Implemented automatic monitoring scripts with email alerts to detect failures and performance issues.</li>
+                            <li>Built a web interface to manage static and dynamic redirects using the Cloudflare API.</li>
+                        </ul>
+                    </div>
+                </div>
 
-<ul>
-<li>Java / Spring / REST / SOAP</li>
-<li>Python / Automation</li>
-<li>SQL Server / Performance tuning</li>
-<li>Microservices / API Integration</li>
-<li>Docker / Kubernetes / AWS</li>
-<li>Linux / Windows Server</li>
-<li>Banking / Financial systems</li>
-<li>Cloudflare / WordPress / Monitoring</li>
-</ul>
+                <div class="job">
+                    <div class="job-title">Software Developer @ Julasoft – Software Solutions</div>
+                    <div class="job-date">May 2022 – Apr 2023</div>
+                    <div class="job-details">
+                        <ul>
+                            <li>Development of web system for warehouse management (SIGBodegas) for the SENASA Argentina project.</li>
+                            <li>Handled backend Java development, JSF frontend, system integration, and database design.</li>
+                        </ul>
+                    </div>
+                </div>
 
-<h2>Experience</h2>
+                <div class="job">
+                    <div class="job-title">Technical Support / Network Administration @ AMHYS SA</div>
+                    <div class="job-date">2014 – Present</div>
+                    <div class="job-details">
+                        <ul>
+                            <li>Server administration, network configuration, and hardware support.</li>
+                        </ul>
+                    </div>
+                </div>
 
-<h3>Structured Intelligence Argentina</h3>
-<p>
-Senior Software Engineer (2006 - Present)<br>
-Development of banking and trade systems, REST services, SQL Server optimization,
-system integration and infrastructure administration.
-</p>
+            </div>
+        </section>
 
-<h3>Crehana</h3>
-<p>
-Backend Developer (2024 - 2025)<br>
-Python tools, SEO automation, Cloudflare redirects, monitoring scripts,
-microservices environment, WordPress migration.
-</p>
+        <section id="education">
+            <h2>>_ Education & Languages</h2>
+            <div class="timeline">
+                <div class="job">
+                    <div class="job-title">Analyst in Informatics</div>
+                    <div class="job-date">Universidad Argentina de la Empresa (UADE) – 2019</div>
+                </div>
+                <div class="job">
+                    <div class="job-title">Electronics Technician</div>
+                    <div class="job-date">Escuela Técnica N°12 – 2004</div>
+                </div>
+            </div>
+            <p><strong>Languages:</strong> English – Advanced (spoken and written)</p>
+        </section>
+        
+        <br><br>
+    </div>
 
-<h3>Julasoft</h3>
-<p>
-Software Developer (2022 - 2023)<br>
-Java backend, JSF frontend, SENASA warehouse system.
-</p>
+    <script>
+        const toggleSwitch = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme');
 
-<h2>Education</h2>
+        // Check if user previously selected legacy mode
+        if (currentTheme === 'legacy') {
+            document.body.classList.add('legacy-mode');
+            toggleSwitch.checked = true;
+        }
 
-<p>
-Analyst in Informatics – UADE<br>
-Electronics Technician
-</p>
-
-<h2>Languages</h2>
-
-<p>
-English – Advanced
-</p>
-
+        toggleSwitch.addEventListener('change', function(e) {
+            if (e.target.checked) {
+                document.body.classList.add('legacy-mode');
+                localStorage.setItem('theme', 'legacy');
+            } else {
+                document.body.classList.remove('legacy-mode');
+                localStorage.setItem('theme', 'modern');
+            }
+        });
+    </script>
 </body>
 </html>
