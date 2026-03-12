@@ -4,20 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicolás Bruno - Senior Backend Engineer</title>
+    <meta name="description" content="Nicolás Bruno - Senior Backend Engineer with 18+ years of experience in Java, financial systems, SQL Server, API integration, legacy modernization, and AI-assisted development.">
     <style>
         /* =========================================
            TEMA MODERNO (DEFAULT)
            ========================================= */
         :root {
-            --bg-color: #0f172a; /* Dark slate */
-            --text-color: #cbd5e1; /* Light slate */
+            --bg-color: #0f172a;
+            --text-color: #cbd5e1;
             --heading-color: #e2e8f0;
-            --accent-color: #38bdf8; /* Bright blue */
+            --accent-color: #38bdf8;
             --card-bg: #1e293b;
             --border-color: #334155;
             --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            --font-mono: 'Consolas', monospace;
+            --font-mono: 'Consolas', 'Courier New', monospace;
             --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -33,22 +42,76 @@
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 40px 20px 60px;
         }
 
-        h1, h2, h3 { color: var(--heading-color); }
-        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--accent-color); }
-        h2 { font-size: 1.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-top: 40px; }
-        h3 { font-size: 1.2rem; margin-bottom: 5px; }
-        
-        a { color: var(--accent-color); text-decoration: none; transition: var(--transition); }
-        a:hover { text-decoration: underline; }
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-top: 0;
+        }
 
-        .header-info { margin-bottom: 30px; font-size: 1.1rem; }
-        .header-info span { margin-right: 15px; display: inline-block; }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+            line-height: 1.15;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 14px;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            margin-bottom: 10px;
+        }
+
+        .header-info {
+            margin-bottom: 24px;
+            font-size: 1.05rem;
+        }
+
+        .header-info span {
+            margin-right: 15px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .headline {
+            font-size: 1.08rem;
+            margin-bottom: 0;
+        }
 
         /* Skills Badges */
-        .skills-container { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
         .skill-tag {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -57,11 +120,26 @@
             font-family: var(--font-mono);
             font-size: 0.9rem;
             color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-1px);
+            border-color: var(--accent-color);
         }
 
         /* Experience Timeline */
-        .timeline { border-left: 2px solid var(--border-color); padding-left: 20px; margin-top: 20px; }
-        .job { position: relative; margin-bottom: 40px; }
+        .timeline {
+            border-left: 2px solid var(--border-color);
+            padding-left: 20px;
+            margin-top: 20px;
+        }
+
+        .job {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
         .job::before {
             content: '';
             position: absolute;
@@ -73,12 +151,42 @@
             background-color: var(--accent-color);
             border: 2px solid var(--bg-color);
         }
-        .job-title { font-weight: bold; color: var(--heading-color); }
-        .job-company { font-weight: bold; color: var(--accent-color); font-size: 1.1rem; }
-        .job-date { font-family: var(--font-mono); font-size: 0.9rem; color: #94a3b8; margin-bottom: 10px; }
-        .job-details ul { padding-left: 20px; margin-top: 10px; }
-        .job-details li { margin-bottom: 8px; }
-        .job-section-title { font-weight: bold; color: var(--heading-color); margin-top: 15px; margin-bottom: 5px; display: block; }
+
+        .job-title {
+            font-weight: 700;
+            color: var(--heading-color);
+        }
+
+        .job-company {
+            font-weight: 700;
+            color: var(--accent-color);
+            font-size: 1.08rem;
+        }
+
+        .job-date {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 10px;
+        }
+
+        .job-details ul {
+            padding-left: 20px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        .job-details li {
+            margin-bottom: 8px;
+        }
+
+        .job-section-title {
+            font-weight: 700;
+            color: var(--heading-color);
+            margin-top: 15px;
+            margin-bottom: 5px;
+            display: block;
+        }
 
         /* =========================================
            TEMA LEGACY (TERMINAL MODE)
@@ -106,11 +214,13 @@
 
         body.legacy-mode .job::before {
             border-radius: 0;
-            background-color: #000;
+            background-color: #000000;
             border: 2px solid var(--accent-color);
         }
 
-        body.legacy-mode h2 { border-bottom: 1px dashed var(--accent-color); }
+        body.legacy-mode h2 {
+            border-bottom: 1px dashed var(--accent-color);
+        }
 
         /* Toggle Button */
         .theme-switch-wrapper {
@@ -129,32 +239,94 @@
             font-size: 0.8rem;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
-        
-        body.legacy-mode .theme-switch-wrapper { border-radius: 0; border: 1px dashed var(--accent-color); }
 
-        .switch { position: relative; display: inline-block; width: 40px; height: 20px; }
-        .switch input { opacity: 0; width: 0; height: 0; }
+        body.legacy-mode .theme-switch-wrapper {
+            border-radius: 0;
+            border: 1px dashed var(--accent-color);
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
         .slider {
-            position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
-            background-color: #334155; transition: .4s; border-radius: 20px;
+            position: absolute;
+            cursor: pointer;
+            inset: 0;
+            background-color: #334155;
+            transition: .4s;
+            border-radius: 20px;
         }
-        .slider:before {
-            position: absolute; content: ""; height: 16px; width: 16px;
-            left: 2px; bottom: 2px; background-color: white; transition: .4s; border-radius: 50%;
-        }
-        input:checked + .slider { background-color: var(--accent-color); }
-        input:checked + .slider:before { transform: translateX(20px); background-color: #000; }
-        body.legacy-mode .slider { border-radius: 0; border: 1px solid var(--accent-color); background: #000; }
-        body.legacy-mode .slider:before { border-radius: 0; background-color: var(--accent-color); }
 
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 2px;
+            bottom: 2px;
+            background-color: #ffffff;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--accent-color);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(20px);
+            background-color: #000000;
+        }
+
+        body.legacy-mode .slider {
+            border-radius: 0;
+            border: 1px solid var(--accent-color);
+            background: #000000;
+        }
+
+        body.legacy-mode .slider:before {
+            border-radius: 0;
+            background-color: var(--accent-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 90px 16px 40px;
+            }
+
+            .theme-switch-wrapper {
+                top: 12px;
+                right: 12px;
+                padding: 8px 12px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .header-info {
+                font-size: 0.98rem;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <div class="theme-switch-wrapper">
+    <div class="theme-switch-wrapper" aria-label="Theme switcher">
         <span>MODERN</span>
         <label class="switch">
-            <input type="checkbox" id="theme-toggle">
+            <input type="checkbox" id="theme-toggle" aria-label="Toggle legacy mode">
             <span class="slider"></span>
         </label>
         <span>LEGACY</span>
@@ -163,28 +335,30 @@
     <div class="container">
         <header>
             <h1>Nicolás Bruno</h1>
+
             <div class="header-info">
                 <span>📍 Buenos Aires, Argentina</span>
                 <span>📧 <a href="mailto:nico.nh@gmail.com">nico.nh@gmail.com</a></span>
                 <span>📞 +54 11 5455-4563</span>
-                <span>🔗 <a href="https://www.linkedin.com/in/nicolas-bruno-nh" target="_blank">linkedin.com/in/nicolas-bruno-nh</a></span>
+                <span>🔗 <a href="https://www.linkedin.com/in/nicolas-bruno-nh" target="_blank" rel="noopener noreferrer">linkedin.com/in/nicolas-bruno-nh</a></span>
             </div>
-            <p><strong>Senior Backend Engineer | Java | Financial Systems | SQL Server | API Integration | AI-Assisted Development</strong></p>
+
+            <p class="headline"><strong>Senior Backend Engineer | Java | Financial Systems | SQL Server | API Integration | Legacy Modernization | AI-Assisted Development</strong></p>
         </header>
 
         <section id="about">
-            <h2>>_ About</h2>
-            <p>Senior Software Engineer with 18+ years of experience in enterprise platforms, banking systems, and high-volume backend applications.</p>
-            <p>Specialized in Java, SQL Server, API integration, and modernization of legacy systems. Extensive experience working with financial and trade platforms, performance tuning, and complex system integrations.</p>
-            <p>Currently focused on backend architecture, API development, legacy modernization, and AI-assisted development workflows using LLM tools. Open to remote contract opportunities.</p>
+            <h2>&gt;_ About</h2>
+            <p>Senior Software Engineer with 18+ years of experience building, maintaining, and modernizing enterprise platforms, banking systems, and high-volume backend applications.</p>
+            <p>Strong background in Java, SQL Server, API integration, performance tuning, and modernization of legacy systems. Extensive experience delivering solutions for financial and foreign trade platforms, complex integrations, and mission-critical backend processes.</p>
+            <p>Currently focused on backend architecture, high-volume systems, API development, legacy modernization, performance optimization, and AI-assisted development workflows using LLM tools. Open to remote contract opportunities.</p>
         </section>
 
         <section id="skills">
-            <h2>>_ Technical Skills</h2>
+            <h2>&gt;_ Technical Skills</h2>
             <div class="skills-container">
                 <span class="skill-tag">Java / Spring / Backend Architecture</span>
                 <span class="skill-tag">REST / SOAP / XML / JSON</span>
-                <span class="skill-tag">SQL Server / Query Tuning / Performance</span>
+                <span class="skill-tag">SQL Server / Query Tuning / Performance Optimization</span>
                 <span class="skill-tag">API Integration / Middleware / Workers</span>
                 <span class="skill-tag">Python / Automation Scripts</span>
                 <span class="skill-tag">JSP / JSF / React / Bootstrap</span>
@@ -199,56 +373,56 @@
         </section>
 
         <section id="ai-tools">
-            <h2>>_ AI & LLM Tools</h2>
+            <h2>&gt;_ AI &amp; LLM Tools</h2>
             <div class="skills-container">
-                <span class="skill-tag">Claude Opus 4.6, Gemini 3.1 Pro, GPT-5.3-Codex</span>
+                <span class="skill-tag">ChatGPT Codex / Claude / Gemini</span>
                 <span class="skill-tag">AI-assisted software development</span>
-                <span class="skill-tag">AI-based code refactoring & migration</span>
-                <span class="skill-tag">Prompt engineering for dev tasks</span>
-                <span class="skill-tag">AI-assisted SQL optimization & debugging</span>
-                <span class="skill-tag">AI for documentation, testing & automation</span>
+                <span class="skill-tag">AI-based code refactoring &amp; migration</span>
+                <span class="skill-tag">Prompt engineering for development tasks</span>
+                <span class="skill-tag">AI-assisted SQL optimization &amp; debugging</span>
+                <span class="skill-tag">AI for documentation, testing &amp; automation</span>
                 <span class="skill-tag">Legacy modernization using AI tools</span>
             </div>
         </section>
 
         <section id="experience">
-            <h2>>_ Professional Experience</h2>
+            <h2>&gt;_ Professional Experience</h2>
             <div class="timeline">
-                
+
                 <div class="job">
                     <div class="job-title">Senior Software Engineer / System Analyst</div>
                     <div class="job-company">Structured Intelligence Argentina SA</div>
                     <div class="job-date">May 2006 – Present</div>
                     <div class="job-details">
-                        <p>Development, maintenance, and modernization of enterprise banking and foreign trade systems.</p>
-                        
+                        <p>Development, maintenance, and modernization of enterprise banking and foreign trade systems in high-demand production environments.</p>
+
                         <span class="job-section-title">eComex – Foreign Trade System</span>
                         <ul>
-                            <li>Backend development in Java for high-volume financial operations.</li>
-                            <li>SOAP/XML integrations with banking platforms.</li>
-                            <li>SQL Server optimization for large datasets.</li>
-                            <li>Development of web modules using JSP, React, Bootstrap.</li>
+                            <li>Backend development in Java for high-volume financial operations and business-critical trade workflows.</li>
+                            <li>Designed and maintained SOAP/XML integrations with banking platforms and external enterprise systems.</li>
+                            <li>Performed SQL Server optimization for large datasets and performance-sensitive queries.</li>
+                            <li>Developed web modules and internal tools using JSP, React, and Bootstrap.</li>
                         </ul>
 
                         <span class="job-section-title">MCI2000 – Communications Module</span>
                         <ul>
-                            <li>Development of REST services and background workers.</li>
-                            <li>Message processing and integration with external systems.</li>
-                            <li>Performance optimization of backend processes.</li>
+                            <li>Designed and developed REST services and background workers for message processing and system integration.</li>
+                            <li>Handled backend flows connected to external platforms, focusing on reliability, throughput, and maintainability.</li>
+                            <li>Improved performance of backend processes and operational routines in legacy-heavy environments.</li>
                         </ul>
 
                         <span class="job-section-title">API / Integration Projects</span>
                         <ul>
-                            <li>Design and implementation of REST APIs for banking workflows.</li>
-                            <li>Integration with BPM and external financial services.</li>
-                            <li>Database design and performance tuning.</li>
+                            <li>Designed and implemented REST APIs for banking workflows and enterprise integrations.</li>
+                            <li>Integrated BPM-driven processes with internal and external financial services.</li>
+                            <li>Contributed to database design, query optimization, and integration-oriented backend architecture.</li>
                         </ul>
 
                         <span class="job-section-title">Infrastructure</span>
                         <ul>
-                            <li>SQL Server administration and tuning.</li>
-                            <li>Windows / Linux server environments.</li>
-                            <li>WebSphere / JBoss / WildFly / Tomcat administration.</li>
+                            <li>Worked with SQL Server administration, query tuning, and production troubleshooting.</li>
+                            <li>Managed deployments and environments across Windows and Linux servers.</li>
+                            <li>Administered and supported WebSphere, JBoss, WildFly, and Tomcat application servers.</li>
                         </ul>
                     </div>
                 </div>
@@ -259,10 +433,10 @@
                     <div class="job-date">Feb 2024 – Apr 2025</div>
                     <div class="job-details">
                         <ul>
-                            <li>Developed Python tools for SEO automation.</li>
-                            <li>Built scripts for monitoring and alerting.</li>
-                            <li>Implemented Cloudflare API integrations.</li>
-                            <li>Set up local environments for microservices architecture.</li>
+                            <li>Developed Python tools for SEO automation, including sitemap and robots-related workflows.</li>
+                            <li>Built monitoring and alerting scripts to detect failures and performance issues.</li>
+                            <li>Implemented Cloudflare API integrations to manage redirects and operational web tooling.</li>
+                            <li>Set up local development environments for microservices-based architecture and migration analysis.</li>
                         </ul>
                     </div>
                 </div>
@@ -273,9 +447,9 @@
                     <div class="job-date">May 2022 – Apr 2023</div>
                     <div class="job-details">
                         <ul>
-                            <li>Backend Java development for SENASA warehouse system.</li>
-                            <li>JSF frontend development.</li>
-                            <li>Database design and system integration.</li>
+                            <li>Backend Java development for SENASA warehouse management system.</li>
+                            <li>Worked on JSF frontend development, business logic, and system integration.</li>
+                            <li>Contributed to database design and application-level data flows.</li>
                         </ul>
                     </div>
                 </div>
@@ -286,9 +460,9 @@
                     <div class="job-date">2014 – Present</div>
                     <div class="job-details">
                         <ul>
-                            <li>Server administration.</li>
-                            <li>Network configuration.</li>
-                            <li>Hardware and infrastructure support.</li>
+                            <li>Server administration and operational support.</li>
+                            <li>Network configuration and infrastructure troubleshooting.</li>
+                            <li>Hardware support and general technical administration.</li>
                         </ul>
                     </div>
                 </div>
@@ -297,7 +471,7 @@
         </section>
 
         <section id="education">
-            <h2>>_ Education & Languages</h2>
+            <h2>&gt;_ Education &amp; Languages</h2>
             <div class="timeline">
                 <div class="job">
                     <div class="job-title">Associate Degree in Computer Science</div>
@@ -308,23 +482,20 @@
                     <div class="job-date">Escuela Técnica N°12 – 2004</div>
                 </div>
             </div>
-            <p><strong>Languages:</strong> English – Advanced</p>
+            <p><strong>Languages:</strong> English – Advanced (spoken and written)</p>
         </section>
-        
-        <br><br>
     </div>
 
     <script>
         const toggleSwitch = document.getElementById('theme-toggle');
-        const currentTheme = localStorage.getItem('theme');
+        const storedTheme = localStorage.getItem('theme');
 
-        // Check if user previously selected legacy mode
-        if (currentTheme === 'legacy') {
+        if (storedTheme === 'legacy') {
             document.body.classList.add('legacy-mode');
             toggleSwitch.checked = true;
         }
 
-        toggleSwitch.addEventListener('change', function(e) {
+        toggleSwitch.addEventListener('change', function (e) {
             if (e.target.checked) {
                 document.body.classList.add('legacy-mode');
                 localStorage.setItem('theme', 'legacy');
