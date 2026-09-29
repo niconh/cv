@@ -299,6 +299,32 @@
             background-color: var(--accent-color);
         }
 
+        /* Language Button */
+        .switch-divider {
+            color: var(--border-color);
+        }
+
+        .lang-btn {
+            background: transparent;
+            color: var(--accent-color);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 2px 8px;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .lang-btn:hover {
+            border-color: var(--accent-color);
+        }
+
+        body.legacy-mode .lang-btn {
+            border-radius: 0;
+            border: 1px dashed var(--accent-color);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .container {
@@ -330,6 +356,8 @@
             <span class="slider"></span>
         </label>
         <span>LEGACY</span>
+        <span class="switch-divider" aria-hidden="true">|</span>
+        <button type="button" id="lang-toggle" class="lang-btn" aria-label="Cambiar a español">ES</button>
     </div>
 
     <div class="container">
@@ -343,140 +371,135 @@
                 <span>🔗 <a href="https://www.linkedin.com/in/nicolas-bruno-nh" target="_blank" rel="noopener noreferrer">linkedin.com/in/nicolas-bruno-nh</a></span>
             </div>
 
-            <p class="headline"><strong>Senior Backend Engineer | Java | Financial Systems | SQL Server | API Integration | Legacy Modernization | AI-Assisted Development</strong></p>
+            <p data-i18n="headline" class="headline"><strong>Senior Backend Engineer | Java | Financial Systems | SQL Server | API Integration | Legacy Modernization | AI-Assisted Development</strong></p>
         </header>
 
         <section id="about">
-            <h2>&gt;_ About</h2>
-            <p>Senior Software Engineer with 18+ years of experience building, maintaining, and modernizing enterprise platforms, banking systems, and high-volume backend applications.</p>
-            <p>Strong background in Java, SQL Server, API integration, performance tuning, and modernization of legacy systems. Extensive experience delivering solutions for financial and foreign trade platforms, complex integrations, and mission-critical backend processes.</p>
-            <p>Currently focused on backend architecture, high-volume systems, API development, legacy modernization, performance optimization, and AI-assisted development workflows using LLM tools. Open to remote contract opportunities.</p>
+            <h2 data-i18n="h_about">&gt;_ About</h2>
+            <p data-i18n="about1">Senior Software Engineer with 18+ years of experience building, maintaining, and modernizing enterprise platforms, banking systems, and high-volume backend applications.</p>
+            <p data-i18n="about2">Strong background in Java, SQL Server, API integration, performance tuning, and modernization of legacy systems. Extensive experience delivering solutions for financial and foreign trade platforms, complex integrations, and mission-critical backend processes.</p>
+            <p data-i18n="about3">Currently focused on backend architecture, high-volume systems, API development, legacy modernization, performance optimization, and AI-assisted development workflows using LLM tools. Open to remote contract opportunities.</p>
         </section>
 
         <section id="skills">
-            <h2>&gt;_ Technical Skills</h2>
+            <h2 data-i18n="h_skills">&gt;_ Technical Skills</h2>
             <div class="skills-container">
                 <span class="skill-tag">Java / Spring / Backend Architecture</span>
                 <span class="skill-tag">REST / SOAP / XML / JSON</span>
                 <span class="skill-tag">SQL Server / Query Tuning / Performance Optimization</span>
                 <span class="skill-tag">API Integration / Middleware / Workers</span>
-                <span class="skill-tag">Python / Automation Scripts</span>
+                <span data-i18n="sk_python" class="skill-tag">Python / Automation Scripts</span>
                 <span class="skill-tag">JSP / JSF / React / Bootstrap</span>
                 <span class="skill-tag">WebSphere / JBoss / WildFly / Tomcat</span>
                 <span class="skill-tag">Docker / Kubernetes / AWS</span>
                 <span class="skill-tag">Linux / Windows Server</span>
                 <span class="skill-tag">Git / CI/CD / DevOps</span>
-                <span class="skill-tag">Financial Systems / Banking Platforms</span>
-                <span class="skill-tag">High-volume Batch Processing</span>
-                <span class="skill-tag">Legacy System Modernization</span>
+                <span data-i18n="sk_fin" class="skill-tag">Financial Systems / Banking Platforms</span>
+                <span data-i18n="sk_batch" class="skill-tag">High-volume Batch Processing</span>
+                <span data-i18n="sk_legacy" class="skill-tag">Legacy System Modernization</span>
             </div>
         </section>
 
         <section id="ai-tools">
-            <h2>&gt;_ AI &amp; LLM Tools</h2>
+            <h2 data-i18n="h_ai">&gt;_ AI &amp; LLM Tools</h2>
             <div class="skills-container">
-                <span class="skill-tag">Claude Opus 4.7, Gemini 3.1 Pro, GPT-5.3-Codex</span>
-                <span class="skill-tag">AI-assisted software development</span>
-                <span class="skill-tag">AI-based code refactoring &amp; migration</span>
-                <span class="skill-tag">Prompt engineering for development tasks</span>
-                <span class="skill-tag">AI-assisted SQL optimization &amp; debugging</span>
-                <span class="skill-tag">AI for documentation, testing &amp; automation</span>
-                <span class="skill-tag">Legacy modernization using AI tools</span>
+                <span class="skill-tag">Claude Code, Gemini Pro, ChatGPT Codex</span>
+                <span data-i18n="ai1" class="skill-tag">AI-assisted software development</span>
+                <span data-i18n="ai2" class="skill-tag">AI-based code refactoring &amp; migration</span>
+                <span data-i18n="ai3" class="skill-tag">Prompt engineering for development tasks</span>
+                <span data-i18n="ai4" class="skill-tag">AI-assisted SQL optimization &amp; debugging</span>
+                <span data-i18n="ai5" class="skill-tag">AI for documentation, testing &amp; automation</span>
+                <span data-i18n="ai6" class="skill-tag">Legacy modernization using AI tools</span>
             </div>
         </section>
 
         <section id="experience">
-            <h2>&gt;_ Professional Experience</h2>
+            <h2 data-i18n="h_exp">&gt;_ Professional Experience</h2>
             <div class="timeline">
 
                 <div class="job">
-                    <div class="job-title">Senior Software Engineer / System Analyst</div>
+                    <div data-i18n="sia_title" class="job-title">Senior Software Engineer / System Analyst</div>
                     <div class="job-company">Structured Intelligence Argentina SA</div>
-                    <div class="job-date">May 2006 – Present</div>
+                    <div data-i18n="sia_date" class="job-date">May 2006 – Present</div>
                     <div class="job-details">
-                        <p>Development, maintenance, and modernization of enterprise banking and foreign trade systems in high-demand production environments.</p>
+                        <p data-i18n="sia_desc">Development, maintenance, and modernization of enterprise banking and foreign trade systems in high-demand production environments.</p>
 
-                        <span class="job-section-title">eComex – Foreign Trade System</span>
+                        <span data-i18n="sia_s1" class="job-section-title">eComex – Foreign Trade System</span>
                         <ul>
-                            <li>Backend development in Java for high-volume financial operations and business-critical trade workflows.</li>
-                            <li>Designed and maintained SOAP/XML integrations with banking platforms and external enterprise systems.</li>
-                            <li>Performed SQL Server optimization for large datasets and performance-sensitive queries.</li>
-                            <li>Developed web modules and internal tools using JSP, React, and Bootstrap.</li>
+                            <li data-i18n="sia_1">Backend development in Java for high-volume financial operations and business-critical trade workflows.</li>
+                            <li data-i18n="sia_2">Designed and maintained SOAP/XML integrations with banking platforms and external enterprise systems.</li>
+                            <li data-i18n="sia_sign">Optimized the request-signing process, reducing processing time from 5 seconds to 1 second (80% faster).</li>
+                            <li data-i18n="sia_3">Performed SQL Server optimization for large datasets and performance-sensitive queries.</li>
+                            <li data-i18n="sia_4">Developed web modules and internal tools using JSP, React, and Bootstrap.</li>
                         </ul>
 
-                        <span class="job-section-title">MCI2000 – Communications Module</span>
+                        <span data-i18n="sia_s2" class="job-section-title">MCI2000 – Communications Module</span>
                         <ul>
-                            <li>Designed and developed REST services and background workers for message processing and system integration.</li>
-                            <li>Handled backend flows connected to external platforms, focusing on reliability, throughput, and maintainability.</li>
-                            <li>Improved performance of backend processes and operational routines in legacy-heavy environments.</li>
+                            <li data-i18n="sia_5">Designed and developed REST services and background workers for message processing and system integration.</li>
+                            <li data-i18n="sia_6">Handled backend flows connected to external platforms, focusing on reliability, throughput, and maintainability.</li>
+                            <li data-i18n="sia_7">Improved performance of backend processes and operational routines in legacy-heavy environments.</li>
                         </ul>
 
-                        <span class="job-section-title">API / Integration Projects</span>
+                        <span data-i18n="sia_s3" class="job-section-title">API / Integration Projects</span>
                         <ul>
-                            <li>Designed and implemented REST APIs for banking workflows and enterprise integrations.</li>
-                            <li>Integrated BPM-driven processes with internal and external financial services.</li>
-                            <li>Contributed to database design, query optimization, and integration-oriented backend architecture.</li>
+                            <li data-i18n="sia_8">Designed and implemented REST APIs for banking workflows and enterprise integrations.</li>
+                            <li data-i18n="sia_9">Integrated BPM-driven processes with internal and external financial services.</li>
+                            <li data-i18n="sia_10">Contributed to database design, query optimization, and integration-oriented backend architecture.</li>
                         </ul>
 
-                        <span class="job-section-title">Infrastructure</span>
+                        <span data-i18n="tm_title" class="job-section-title">Termap S.A. – Web Platforms (Client, 2006 – Present)</span>
                         <ul>
-                            <li>Worked with SQL Server administration, query tuning, and production troubleshooting.</li>
-                            <li>Managed deployments and environments across Windows and Linux servers.</li>
-                            <li>Administered and supported WebSphere, JBoss, WildFly, and Tomcat application servers.</li>
+                            <li data-i18n="tm_desc">Development and maintenance of three web platforms for a maritime terminal operator.</li>
+                            <li data-i18n="tm_1"><a href="https://www.termap.com.ar" target="_blank" rel="noopener">www.termap.com.ar</a> – Corporate institutional website.</li>
+                            <li data-i18n="tm_2"><a href="https://nominaciones.termap.com.ar" target="_blank" rel="noopener">nominaciones.termap.com.ar</a> – Vessel nominations system.</li>
+                            <li data-i18n="tm_3"><a href="https://term.sicorp.net" target="_blank" rel="noopener">term.sicorp.net</a> – Terminal status portal.</li>
+                        </ul>
+
+                        <span data-i18n="sia_s4" class="job-section-title">Infrastructure</span>
+                        <ul>
+                            <li data-i18n="sia_11">Worked with SQL Server administration, query tuning, and production troubleshooting.</li>
+                            <li data-i18n="sia_12">Managed deployments and environments across Windows and Linux servers.</li>
+                            <li data-i18n="sia_13">Administered and supported WebSphere, JBoss, WildFly, and Tomcat application servers.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="job">
-                    <div class="job-title">Web Developer / Maintenance</div>
-                    <div class="job-company">Termap S.A.</div>
-                    <div class="job-date">2006 – Present</div>
-                    <div class="job-details">
-                        <p>Development and maintenance of three web platforms for a maritime terminal operator.</p>
-                        <ul>
-                            <li><a href="https://www.termap.com.ar" target="_blank" rel="noopener">www.termap.com.ar</a> – Corporate institutional website.</li>
-                            <li><a href="https://nominaciones.termap.com.ar" target="_blank" rel="noopener">nominaciones.termap.com.ar</a> – Vessel nominations system.</li>
-                            <li><a href="https://term.sicorp.net" target="_blank" rel="noopener">term.sicorp.net</a> – Terminal status portal.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="job">
-                    <div class="job-title">Backend Developer / DevOps / Web Tools</div>
+                    <div data-i18n="cr_title" class="job-title">Backend Developer / DevOps / Web Tools</div>
                     <div class="job-company">Crehana</div>
-                    <div class="job-date">Feb 2024 – Apr 2025</div>
+                    <div data-i18n="cr_date" class="job-date">Feb 2024 – Apr 2025</div>
                     <div class="job-details">
                         <ul>
-                            <li>Developed Python tools for SEO automation, including sitemap and robots-related workflows.</li>
-                            <li>Built monitoring and alerting scripts to detect failures and performance issues.</li>
-                            <li>Implemented Cloudflare API integrations to manage redirects and operational web tooling.</li>
-                            <li>Set up local development environments for microservices-based architecture and migration analysis.</li>
+                            <li data-i18n="cr_1">Developed Python tools for SEO automation, including sitemap and robots-related workflows.</li>
+                            <li data-i18n="cr_2">Built monitoring and alerting scripts to detect failures and performance issues.</li>
+                            <li data-i18n="cr_3">Implemented Cloudflare API integrations to manage redirects and operational web tooling.</li>
+                            <li data-i18n="cr_4">Set up local development environments for microservices-based architecture and migration analysis.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="job">
-                    <div class="job-title">Software Developer</div>
+                    <div data-i18n="js_title" class="job-title">Software Developer</div>
                     <div class="job-company">Julasoft – Software Solutions</div>
-                    <div class="job-date">May 2022 – Apr 2023</div>
+                    <div data-i18n="js_date" class="job-date">May 2022 – Apr 2023</div>
                     <div class="job-details">
                         <ul>
-                            <li>Backend Java development for SENASA warehouse management system.</li>
-                            <li>Worked on JSF frontend development, business logic, and system integration.</li>
-                            <li>Contributed to database design and application-level data flows.</li>
+                            <li data-i18n="js_1">Backend Java development for SENASA warehouse management system.</li>
+                            <li data-i18n="js_2">Worked on JSF frontend development, business logic, and system integration.</li>
+                            <li data-i18n="js_3">Contributed to database design and application-level data flows.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="job">
-                    <div class="job-title">Technical Support / Network Administration</div>
+                    <div data-i18n="am_title" class="job-title">Technical Support / Network Administration</div>
                     <div class="job-company">AMHYS SA</div>
-                    <div class="job-date">2014 – Present</div>
+                    <div data-i18n="am_date" class="job-date">2014 – Present</div>
                     <div class="job-details">
                         <ul>
-                            <li>Server administration and operational support.</li>
-                            <li>Network configuration and infrastructure troubleshooting.</li>
-                            <li>Hardware support and general technical administration.</li>
+                            <li data-i18n="am_1">Server administration and operational support.</li>
+                            <li data-i18n="am_2">Network configuration and infrastructure troubleshooting.</li>
+                            <li data-i18n="am_3">Hardware support and general technical administration.</li>
                         </ul>
                     </div>
                 </div>
@@ -485,18 +508,18 @@
         </section>
 
         <section id="education">
-            <h2>&gt;_ Education &amp; Languages</h2>
+            <h2 data-i18n="h_edu">&gt;_ Education &amp; Languages</h2>
             <div class="timeline">
                 <div class="job">
-                    <div class="job-title">Associate Degree in Computer Science</div>
+                    <div data-i18n="ed_1" class="job-title">Associate Degree in Computer Science</div>
                     <div class="job-date">Universidad Argentina de la Empresa (UADE) – 2019</div>
                 </div>
                 <div class="job">
-                    <div class="job-title">Electronics Technician</div>
+                    <div data-i18n="ed_2" class="job-title">Electronics Technician</div>
                     <div class="job-date">Escuela Técnica N°12 – 2004</div>
                 </div>
             </div>
-            <p><strong>Languages:</strong> English – Advanced (spoken and written)</p>
+            <p data-i18n="langs"><strong>Languages:</strong> English – Advanced (spoken and written)</p>
         </section>
     </div>
 
@@ -517,6 +540,100 @@
                 document.body.classList.remove('legacy-mode');
                 localStorage.setItem('theme', 'modern');
             }
+        });
+
+        const translations = {
+            headline: '<strong>Senior Backend Engineer | Java | Sistemas Financieros | SQL Server | Integración de APIs | Modernización de Sistemas Legacy | Desarrollo Asistido por IA</strong>',
+            h_about: '&gt;_ Sobre mí',
+            about1: 'Ingeniero de Software Senior con más de 18 años de experiencia construyendo, manteniendo y modernizando plataformas empresariales, sistemas bancarios y aplicaciones backend de alto volumen.',
+            about2: 'Sólida experiencia en Java, SQL Server, integración de APIs, optimización de rendimiento y modernización de sistemas legacy. Amplia trayectoria en soluciones para plataformas financieras y de comercio exterior, integraciones complejas y procesos backend críticos.',
+            about3: 'Actualmente enfocado en arquitectura backend, sistemas de alto volumen, desarrollo de APIs, modernización de sistemas legacy, optimización de rendimiento y flujos de desarrollo asistidos por IA con herramientas LLM. Abierto a oportunidades de contratación remota.',
+            h_skills: '&gt;_ Habilidades Técnicas',
+            sk_python: 'Python / Scripts de Automatización',
+            sk_fin: 'Sistemas Financieros / Plataformas Bancarias',
+            sk_batch: 'Procesamiento Batch de Alto Volumen',
+            sk_legacy: 'Modernización de Sistemas Legacy',
+            h_ai: '&gt;_ Herramientas de IA y LLM',
+            ai1: 'Desarrollo de software asistido por IA',
+            ai2: 'Refactorización y migración de código con IA',
+            ai3: 'Prompt engineering para tareas de desarrollo',
+            ai4: 'Optimización y depuración SQL asistida por IA',
+            ai5: 'IA para documentación, testing y automatización',
+            ai6: 'Modernización de sistemas legacy con herramientas de IA',
+            h_exp: '&gt;_ Experiencia Profesional',
+            sia_title: 'Ingeniero de Software Senior / Analista de Sistemas',
+            sia_date: 'Mayo 2006 – Presente',
+            sia_desc: 'Desarrollo, mantenimiento y modernización de sistemas empresariales bancarios y de comercio exterior en entornos productivos de alta demanda.',
+            sia_s1: 'eComex – Sistema de Comercio Exterior',
+            sia_1: 'Desarrollo backend en Java para operaciones financieras de alto volumen y flujos de comercio críticos para el negocio.',
+            sia_2: 'Diseño y mantenimiento de integraciones SOAP/XML con plataformas bancarias y sistemas empresariales externos.',
+            sia_sign: 'Optimicé el proceso de firma de solicitudes, reduciendo el tiempo de procesamiento de 5 segundos a 1 segundo (80% más rápido).',
+            sia_3:'Optimización de SQL Server para grandes volúmenes de datos y consultas sensibles al rendimiento.',
+            sia_4: 'Desarrollo de módulos web y herramientas internas con JSP, React y Bootstrap.',
+            sia_s2: 'MCI2000 – Módulo de Comunicaciones',
+            sia_5: 'Diseño y desarrollo de servicios REST y workers en segundo plano para procesamiento de mensajes e integración de sistemas.',
+            sia_6: 'Gestión de flujos backend conectados a plataformas externas, con foco en confiabilidad, throughput y mantenibilidad.',
+            sia_7: 'Mejora del rendimiento de procesos backend y rutinas operativas en entornos con fuerte presencia de sistemas legacy.',
+            sia_s3: 'Proyectos de APIs / Integración',
+            sia_8: 'Diseño e implementación de APIs REST para flujos bancarios e integraciones empresariales.',
+            sia_9: 'Integración de procesos basados en BPM con servicios financieros internos y externos.',
+            sia_10: 'Participación en diseño de bases de datos, optimización de consultas y arquitectura backend orientada a integraciones.',
+            sia_s4: 'Infraestructura',
+            sia_11: 'Administración de SQL Server, optimización de consultas y resolución de problemas en producción.',
+            sia_12: 'Gestión de despliegues y entornos en servidores Windows y Linux.',
+            sia_13: 'Administración y soporte de servidores de aplicaciones WebSphere, JBoss, WildFly y Tomcat.',
+            tm_title: 'Termap S.A. – Plataformas Web (Cliente, 2006 – Presente)',
+            tm_desc: 'Desarrollo y mantenimiento de tres plataformas web para un operador de terminales marítimas.',
+            tm_1: '<a href="https://www.termap.com.ar" target="_blank" rel="noopener">www.termap.com.ar</a> – Sitio web institucional.',
+            tm_2: '<a href="https://nominaciones.termap.com.ar" target="_blank" rel="noopener">nominaciones.termap.com.ar</a> – Sistema de nominaciones de buques.',
+            tm_3: '<a href="https://term.sicorp.net" target="_blank" rel="noopener">term.sicorp.net</a> – Portal de estado de terminales.',
+            cr_title: 'Desarrollador Backend / DevOps / Herramientas Web',
+            cr_date: 'Feb 2024 – Abr 2025',
+            cr_1: 'Desarrollo de herramientas en Python para automatización SEO, incluyendo flujos de sitemap y robots.',
+            cr_2: 'Creación de scripts de monitoreo y alertas para detectar fallas y problemas de rendimiento.',
+            cr_3: 'Implementación de integraciones con la API de Cloudflare para gestionar redirecciones y herramientas web operativas.',
+            cr_4: 'Configuración de entornos de desarrollo locales para arquitectura de microservicios y análisis de migración.',
+            js_title: 'Desarrollador de Software',
+            js_date: 'May 2022 – Abr 2023',
+            js_1: 'Desarrollo backend en Java para el sistema de gestión de depósitos de SENASA.',
+            js_2: 'Desarrollo frontend en JSF, lógica de negocio e integración de sistemas.',
+            js_3: 'Participación en el diseño de bases de datos y flujos de datos a nivel aplicación.',
+            am_title: 'Soporte Técnico / Administración de Redes',
+            am_date: '2014 – Presente',
+            am_1: 'Administración de servidores y soporte operativo.',
+            am_2: 'Configuración de redes y resolución de problemas de infraestructura.',
+            am_3: 'Soporte de hardware y administración técnica general.',
+            h_edu: '&gt;_ Educación e Idiomas',
+            ed_1: 'Título Intermedio en Ciencias de la Computación',
+            ed_2: 'Técnico Electrónico',
+            langs: '<strong>Idiomas:</strong> Inglés – Avanzado (oral y escrito)'
+        };
+
+        const i18nElements = document.querySelectorAll('[data-i18n]');
+        i18nElements.forEach(function (el) {
+            el.dataset.en = el.innerHTML;
+        });
+
+        const langButton = document.getElementById('lang-toggle');
+
+        function setLanguage(lang) {
+            i18nElements.forEach(function (el) {
+                const key = el.dataset.i18n;
+                el.innerHTML = lang === 'es' && translations[key] ? translations[key] : el.dataset.en;
+            });
+            document.documentElement.lang = lang;
+            langButton.textContent = lang === 'es' ? 'EN' : 'ES';
+            langButton.setAttribute('aria-label', lang === 'es' ? 'Switch to English' : 'Cambiar a español');
+        }
+
+        if (localStorage.getItem('lang') === 'es') {
+            setLanguage('es');
+        }
+
+        langButton.addEventListener('click', function () {
+            const next = document.documentElement.lang === 'es' ? 'en' : 'es';
+            setLanguage(next);
+            localStorage.setItem('lang', next);
         });
     </script>
 </body>
