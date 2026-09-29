@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicolás Bruno - Senior Backend Engineer</title>
     <meta name="description" content="Nicolás Bruno - Senior Backend Engineer with 18+ years of experience in Java, financial systems, SQL Server, API integration, legacy modernization, and AI-assisted development.">
+    <link rel="canonical" href="https://niconh.github.io/cv/">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230f172a'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Consolas,monospace' font-size='30' font-weight='700' fill='%2338bdf8'%3ENB%3C/text%3E%3C/svg%3E">
+    <meta name="theme-color" content="#0f172a">
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://niconh.github.io/cv/">
+    <meta property="og:title" content="Nicolás Bruno - Senior Backend Engineer">
+    <meta property="og:description" content="18+ years building and modernizing banking, foreign trade and high-volume backend systems. Java, SQL Server, APIs, web &amp; mobile, AI-assisted development.">
+    <meta property="og:image" content="https://niconh.github.io/cv/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="es_AR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nicolás Bruno - Senior Backend Engineer">
+    <meta name="twitter:description" content="18+ years building and modernizing banking, foreign trade and high-volume backend systems.">
+    <meta name="twitter:image" content="https://niconh.github.io/cv/og-image.png">
     <style>
         /* =========================================
            TEMA MODERNO (DEFAULT)
@@ -325,6 +343,102 @@
             border: 1px dashed var(--accent-color);
         }
 
+        /* Print / PDF */
+        @media print {
+            @page {
+                size: A4;
+                margin: 14mm 14mm 16mm;
+            }
+
+            body,
+            body.legacy-mode {
+                --bg-color: #ffffff;
+                --text-color: #1f2937;
+                --heading-color: #111827;
+                --accent-color: #0369a1;
+                --card-bg: #ffffff;
+                --border-color: #cbd5e1;
+                --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+                --font-mono: 'Consolas', 'Courier New', monospace;
+                font-size: 10.5pt;
+                line-height: 1.45;
+            }
+
+            body.legacy-mode * {
+                text-shadow: none;
+            }
+
+            body.legacy-mode .skill-tag {
+                border: 1px solid var(--border-color);
+                border-radius: 6px;
+            }
+
+            body.legacy-mode .job::before {
+                border-radius: 50%;
+                background-color: var(--accent-color);
+                border: 2px solid var(--bg-color);
+            }
+
+            body.legacy-mode h2 {
+                border-bottom: 2px solid var(--border-color);
+            }
+
+            .theme-switch-wrapper {
+                display: none;
+            }
+
+            body .container {
+                max-width: none;
+                padding: 0 0 0 10px;
+            }
+
+            body h1 {
+                font-size: 22pt;
+            }
+
+            h2 {
+                font-size: 13pt;
+                margin-top: 18px;
+                margin-bottom: 10px;
+                padding-bottom: 4px;
+                break-after: avoid;
+            }
+
+            .skill-tag {
+                font-size: 8.5pt;
+                padding: 2px 8px;
+            }
+
+            .skills-container {
+                gap: 6px;
+            }
+
+            .job {
+                margin-bottom: 18px;
+            }
+
+            .job-title,
+            .job-company,
+            .job-date,
+            .job-section-title {
+                break-after: avoid;
+            }
+
+            .job-details li {
+                margin-bottom: 3px;
+                break-inside: avoid;
+            }
+
+            .job-date {
+                color: #4b5563;
+                margin-bottom: 4px;
+            }
+
+            a {
+                text-decoration: none;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .container {
@@ -358,6 +472,7 @@
         <span>LEGACY</span>
         <span class="switch-divider" aria-hidden="true">|</span>
         <button type="button" id="lang-toggle" class="lang-btn" aria-label="Cambiar a español">ES</button>
+        <button type="button" id="pdf-download" class="lang-btn" aria-label="Download PDF">PDF</button>
     </div>
 
     <div class="container">
@@ -378,7 +493,7 @@
             <h2 data-i18n="h_about">&gt;_ About</h2>
             <p data-i18n="about1">Senior Software Engineer with 18+ years of experience building, maintaining, and modernizing enterprise platforms, banking systems, and high-volume backend applications.</p>
             <p data-i18n="about2">Strong background in Java, SQL Server, API integration, performance tuning, and modernization of legacy systems. Extensive experience delivering solutions for financial and foreign trade platforms, complex integrations, and mission-critical backend processes.</p>
-            <p data-i18n="about3">Currently focused on backend architecture, high-volume systems, API development, legacy modernization, performance optimization, and AI-assisted development workflows using LLM tools. Open to remote contract opportunities.</p>
+            <p data-i18n="about3">Currently focused on backend architecture, high-volume systems, API development, legacy modernization, performance optimization, and AI-assisted development workflows using LLM tools. Also experienced in building websites and mobile applications end to end. Open to remote contract opportunities.</p>
         </section>
 
         <section id="skills">
@@ -390,6 +505,8 @@
                 <span class="skill-tag">API Integration / Middleware / Workers</span>
                 <span data-i18n="sk_python" class="skill-tag">Python / Automation Scripts</span>
                 <span class="skill-tag">JSP / JSF / React / Bootstrap</span>
+                <span data-i18n="sk_web" class="skill-tag">Web Development / Corporate Websites</span>
+                <span data-i18n="sk_mobile" class="skill-tag">Mobile App Development</span>
                 <span class="skill-tag">WebSphere / JBoss / WildFly / Tomcat</span>
                 <span class="skill-tag">Docker / Kubernetes / AWS</span>
                 <span class="skill-tag">Linux / Windows Server</span>
@@ -548,7 +665,9 @@
             h_about: '&gt;_ Sobre mí',
             about1: 'Ingeniero de Software Senior con más de 18 años de experiencia construyendo, manteniendo y modernizando plataformas empresariales, sistemas bancarios y aplicaciones backend de alto volumen.',
             about2: 'Sólida experiencia en Java, SQL Server, integración de APIs, optimización de rendimiento y modernización de sistemas legacy. Amplia trayectoria en soluciones para plataformas financieras y de comercio exterior, integraciones complejas y procesos backend críticos.',
-            about3: 'Actualmente enfocado en arquitectura backend, sistemas de alto volumen, desarrollo de APIs, modernización de sistemas legacy, optimización de rendimiento y flujos de desarrollo asistidos por IA con herramientas LLM. Abierto a oportunidades de contratación remota.',
+            about3: 'Actualmente enfocado en arquitectura backend, sistemas de alto volumen, desarrollo de APIs, modernización de sistemas legacy, optimización de rendimiento y flujos de desarrollo asistidos por IA con herramientas LLM. También con experiencia en el desarrollo integral de sitios web y aplicaciones móviles. Abierto a oportunidades de contratación remota.',
+            sk_web: 'Desarrollo Web / Sitios Institucionales',
+            sk_mobile: 'Desarrollo de Aplicaciones Móviles',
             h_skills: '&gt;_ Habilidades Técnicas',
             sk_python: 'Python / Scripts de Automatización',
             sk_fin: 'Sistemas Financieros / Plataformas Bancarias',
@@ -636,6 +755,13 @@
             const next = document.documentElement.lang === 'es' ? 'en' : 'es';
             setLanguage(next);
             localStorage.setItem('lang', next);
+        });
+
+        document.getElementById('pdf-download').addEventListener('click', function () {
+            const originalTitle = document.title;
+            document.title = document.documentElement.lang === 'es' ? 'Nicolas_Bruno_CV_ES' : 'Nicolas_Bruno_CV_EN';
+            window.print();
+            document.title = originalTitle;
         });
     </script>
 </body>
